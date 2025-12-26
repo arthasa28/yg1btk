@@ -115,23 +115,6 @@
     </section>
 
 
-    <!-- HRD Log.Net QSO -->
-    <section id="live-logs" class="section-padding" style="background: #f8fafc;">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Live Logbook</h2>
-                <p class="section-subtitle">Data komunikasi radio terbaru yang tercatat di stasiun YG1BTK.</p>
-            </div>
-
-            <div class="hrdlog-wrapper fade-in">
-                <div id="hrdlog-oa" style="margin-bottom: 15px;">&nbsp;</div>
-
-                <div id="hrdlog_qrb">Loading logbook data...</div>
-            </div>
-        </div>
-    </section>
-
-
 
     <!-- Verified -->
     <section id="registered" class="section-padding">
@@ -1179,32 +1162,6 @@
             <p style="margin-top:5px; color:var(--tech-cyan);">Member of ORARI Daerah Jawa Barat</p>
         </div>
     </footer>
-
-    <!--HRD Log.net-->
-    <script type="text/javascript" src="https://www.hrdlog.net/hrdlog.js"></script>
-<script type="text/javascript">
-    // Menggunakan window.onload agar script berjalan setelah elemen HTML tersedia
-    window.onload = function() {
-        var ohrdlog_qrb = new HrdLog('YG1BTK');
-        ohrdlog_qrb.SetContainer("hrdlog_qrb");
-        ohrdlog_qrb.SetJsObject("ohrdlog_qrb");
-        ohrdlog_qrb.ShowTopQrb();
-        
-        // Memaksa muat data berdasarkan callsign Anda secara otomatis
-        ohrdlog_qrb.LoadByCallsign(); 
-        
-        ohrdlog_qrb.EnableBandSlots();
-        ohrdlog_qrb.SetColors('#0ea5e9','#FFFFFF','#FFFFFF'); 
-        ohrdlog_qrb.LoadLastQso(10);
-        ohrdlog_qrb.EnableQsoMap(0); // 0 untuk lebar otomatis (responsive)
-        ohrdlog_qrb.DisableLinks();
-
-        // Refresh status OnAir setiap 15 detik
-        setInterval(function() {
-            ohrdlog_qrb.LoadOnAir();
-        }, 15000);
-    };
-</script>
     <script src="app.js"></script>
 
 </body>
