@@ -755,3 +755,30 @@ footer {
     transform: translateY(0);
   }
 }
+
+/* --- HRDLOG STYLING --- */
+.hrdlog-wrapper {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--satellite-silver);
+  overflow-x: auto; /* Penting untuk tampilan mobile agar tidak berantakan */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Memastikan konten di dalam widget mengikuti font website Anda */
+#hrdlog_qrb table,
+#hrdlog_qrb b,
+#hrdlog_qrb span {
+  font-family: "Inter", sans-serif !important;
+}
+
+/* Agar widget tetap responsif di layar kecil */
+@media screen and (max-width: 768px) {
+  .hrdlog-wrapper {
+    padding: 10px;
+  }
+}
