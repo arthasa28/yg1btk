@@ -1182,24 +1182,29 @@
 
     <!--HRD Log.net-->
     <script type="text/javascript" src="https://www.hrdlog.net/hrdlog.js"></script>
-    <script type="text/javascript">
-        // Gunakan window.onload untuk memastikan semua elemen HTML sudah ter-load
-        window.onload = function () {
-            var ohrdlog_qrb = new HrdLog('YG1BTK');
-            ohrdlog_qrb.SetContainer("hrdlog_qrb");
-            ohrdlog_qrb.SetJsObject("ohrdlog_qrb");
-            ohrdlog_qrb.ShowTopQrb();
-            ohrdlog_qrb.LoadByCallsign();
-            ohrdlog_qrb.EnableBandSlots();
-            ohrdlog_qrb.SetColors('#0ea5e9', '#FFFFFF', '#FFFFFF');
-            ohrdlog_qrb.LoadLastQso(10);
-            ohrdlog_qrb.EnableQsoMap(500);
-            ohrdlog_qrb.DisableLinks();
+<script type="text/javascript">
+    // Menggunakan window.onload agar script berjalan setelah elemen HTML tersedia
+    window.onload = function() {
+        var ohrdlog_qrb = new HrdLog('YG1BTK');
+        ohrdlog_qrb.SetContainer("hrdlog_qrb");
+        ohrdlog_qrb.SetJsObject("ohrdlog_qrb");
+        ohrdlog_qrb.ShowTopQrb();
+        
+        // Memaksa muat data berdasarkan callsign Anda secara otomatis
+        ohrdlog_qrb.LoadByCallsign(); 
+        
+        ohrdlog_qrb.EnableBandSlots();
+        ohrdlog_qrb.SetColors('#0ea5e9','#FFFFFF','#FFFFFF'); 
+        ohrdlog_qrb.LoadLastQso(10);
+        ohrdlog_qrb.EnableQsoMap(0); // 0 untuk lebar otomatis (responsive)
+        ohrdlog_qrb.DisableLinks();
 
-            // Interval On-Air
-            setInterval(function () { ohrdlog_qrb.LoadOnAir(); }, 15000);
-        };
-    </script>
+        // Refresh status OnAir setiap 15 detik
+        setInterval(function() {
+            ohrdlog_qrb.LoadOnAir();
+        }, 15000);
+    };
+</script>
     <script src="app.js"></script>
 
 </body>

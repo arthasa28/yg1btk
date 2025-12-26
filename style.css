@@ -816,3 +816,49 @@ footer {
   border: 1px solid #cbd5e1;
   margin-bottom: 10px;
 }
+/* --- PERBAIKAN TABEL HRDLOG --- */
+.hrdlog-wrapper {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--satellite-silver);
+  overflow: hidden; /* Menjaga border-radius */
+}
+
+#hrdlog_qrb {
+  width: 100% !important;
+  overflow-x: auto; /* Membuat tabel bisa di-swipe di HP */
+  display: block;
+}
+
+#hrdlog_qrb table {
+  width: 100% !important;
+  min-width: 600px; /* Mencegah kolom tabel bertumpuk */
+  border-collapse: collapse !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+#hrdlog_qrb td {
+  padding: 12px 8px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  font-size: 0.9rem !important;
+}
+
+/* Merapikan tombol "Send" dan Input jika masih ingin ditampilkan */
+#hrdlog_qrb input[type="text"] {
+  padding: 6px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+}
+
+#hrdlog_qrb input[type="button"] {
+  background: var(--tech-cyan);
+  color: white;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
